@@ -7,7 +7,9 @@ import { router as settingsRouter } from './routes/settings.router.js'
 import {connect} from "./db/db.js";
 
 app.use(express.json())
-
+/*
+ * I vari router sono importati e utilizzati come middleware.
+ */
 app.use('/user', userRouter)
 app.use('/settings', settingsRouter)
 

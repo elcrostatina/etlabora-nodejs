@@ -6,7 +6,7 @@ export const sequelize = new Sequelize('etlabora', 'etlabora', 'R4ndomS3cure', {
     port: 3306,
 });
 
-const User = sequelize.define('User', {
+export const User = sequelize.define('User', {
     firstName: {
         type: DataTypes.STRING,
         allowNull: false
@@ -20,7 +20,7 @@ export const connect = async () => {
     try {
         await sequelize.authenticate();
         console.log('Connection has been established successfully.');
-        await User.sync({ force: true });
+        await User.sync();
     } catch (error) {
         console.error('Unable to connect to the database:', error);
     }
